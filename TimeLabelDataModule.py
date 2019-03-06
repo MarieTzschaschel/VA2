@@ -1,12 +1,14 @@
 import pickle
 import inspect
 import os
+import statistics
 class TimeLabelData:
     
     def __init__(self,filename):
         self.name = filename
         self.labels = []
         self.pauses = []
+        self.pauseLengths = []
 
     def printList(self,list_):
         print("#"*64)
@@ -72,7 +74,26 @@ class TimeLabelData:
     def printPauses(self):
         self.printList(self.pauses)
 
-    #def medianPause
+    def getmedianPause(self):
+        if not self.pauses :
+            return 0
+        else:
+            pauses = self.getPauseLengths()
+            #print(sorted(pauses))
+            return statistics.median(pauses)
+
+    def getPauseLengths(self):
+        self.pauseLengths = [(t1-t) for t,t1 in self.pauses]
+        return self.pauseLengths
+
+    def getStandardDevPauses(self):
+        if not self.pauses:
+            return 0
+        else:
+            pauses = self.getPauseLengths()
+            StandardDev = statistics.stdev(pauses)
+            return StandardDev
+
     #plotted ??
     
 

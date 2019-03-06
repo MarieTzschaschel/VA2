@@ -13,8 +13,8 @@ from TimeLabelDataSetModule import TimeLabelDataSet
 #/imports
 
 #globals
-SOURCE_FOLDER_PATH = "C:\\Users\\1337\\Desktop\\marie\\Samples\\" # make sure path exists, "\" is an escape char 
-DEST_FOLDER_PATH = "C:\\Users\\1337\\Desktop\\marie\\PostProjects\\"
+SOURCE_FOLDER_PATH = "C:\\Users\\marie\\Desktop\\VoiceAnalysis\\Samples\\" # make sure path exists, "\" is an escape char 
+DEST_FOLDER_PATH = "C:\\Users\\marie\\Desktop\\VoiceAnalysis\\PostProjects\\"
 SOUND_FORMAT = ".mp3" #### change this to supported file format from audacity and make sure that there are no spaces in the filename ####
 
 #/globals
@@ -70,5 +70,5 @@ def main():
     TimeLabelDataSet_.saveToFile()
 #/lööp
 
-#main()
+main()
 print("done")

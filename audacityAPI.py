@@ -16,15 +16,15 @@ import time
 
 
 subprocess.Popen("./AudacityWithPipe/Audacity.exe")
-time.sleep(15)
+#time.sleep(15)
 
 if( sys.platform  == 'win32' ):
-    #print( "pipe-test.py, running on windows" )
+    print( "pipe-test.py, running on windows" )
     toname = '\\\\.\\pipe\\ToSrvPipe'
     fromname = '\\\\.\\pipe\\FromSrvPipe'
     EOL = '\r\n\0'
 else:
-    #print( "pipe-test.py, running on linux or mac" )
+    print( "pipe-test.py, running on linux or mac" )
     toname = '/tmp/audacity_script_pipe.to.' + str(os.getuid())
     fromname = '/tmp/audacity_script_pipe.from.' + str(os.getuid())
     EOL = '\n'
@@ -41,9 +41,9 @@ if not os.path.exists( fromname ) :
 
 print()
 tofile = open( toname, 'wt+' )
-#print( "-- File to write to has been opened" )
+print( "-- File to write to has been opened" )
 fromfile = open( fromname, 'rt')
-#print( "-- File to read from has now been opened too\r\n" )
+print( "-- File to read from has now been opened too\r\n" )
 
 
 def sendCommand( command ) :
